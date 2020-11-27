@@ -1,9 +1,7 @@
 const Preposition = (props) => {
     
     const prepareVerbName = preposition =>  {
-        debugger;
         const parts = preposition.split('+');
-        console.log(parts[1]);
         let styles = {};
         if (parts[1] == 'Dativ') {
             styles = {color: '#c20808'};
