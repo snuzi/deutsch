@@ -8,11 +8,15 @@ import Popper from 'popper.js';
 
 function App() {
   return (
-    <div className="App">        
-        <div> 
-            <Home/>
+    <body className="">
+      <main>
+        <div className="App">        
+            <div> 
+                <Home/>
+            </div>
         </div>
-    </div>
+      </main>
+    </body>
   );
 }
 

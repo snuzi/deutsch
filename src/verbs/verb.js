@@ -1,8 +1,12 @@
 const Verb = (props) => {
     
+    const prepareVerbName = verb =>  {
+        return <span>{verb}</span>;
+    };
+
     return (
-        <span>{props.verb.trim()}</span>
-);
+        prepareVerbName(props.verb.trim())
+    );
 }
 
 export default Verb;

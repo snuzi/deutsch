@@ -2,12 +2,14 @@ import VerbList from './VerbList';
 
 const Home = () => {
     return (
-        <div>
-            <p>
-                <h2> Lernen Verben </h2>
-            </p>
-            <div>
-                <VerbList/>
+        <div class="container mt-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2> Verben lernen </h2>
+                    <div>
+                        <VerbList/>
+                    </div>
+                </div>
             </div>
         </div>
     )
