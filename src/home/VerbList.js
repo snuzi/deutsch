@@ -12,7 +12,7 @@ const VerbList = () => {
 
      React.useEffect(() => {
         const results = verbList.filter(verb =>
-            verb.verb.toLowerCase().includes(searchTerm)
+            verb.verb.toLowerCase().includes(searchTerm.toLocaleLowerCase())
         );
         setSearchResults(results);
       }, [searchTerm]);
