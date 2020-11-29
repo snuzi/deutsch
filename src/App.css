@@ -76,6 +76,24 @@
   text-align: left;
 }
 
+
 ul.no-bullets {
   list-style-type: none;
 }
+
+.verb-name {
+  font-weight: 600;
+}
+
+.example-label {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.item { display:block;}
+
+.section {
+  padding: 3px;
+}
+
+

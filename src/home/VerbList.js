@@ -19,15 +19,15 @@ const VerbList = () => {
 
     return (
         <div>
-             <div class="row">
-                <div class="col-md-12">
-                    <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text">Verben und ihre Präpositionalergänzungen</h2>
-                    <div class="input-group md-form form-sm form-2 pl-0">
+             <div className="row">
+                <div className="col-md-12">
+                    <h2 className="pt-3 pb-4 text-center font-bold font-up deep-purple-text">Verben und ihre Präpositionalergänzungen</h2>
+                    <div className="input-group md-form form-sm form-2 pl-0">
                         <input
                         type="input"
                         value={searchTerm}
                         onChange={handleChange}
-                        class="form-control my-0 py-1 pl-3 purple-border" 
+                        className="form-control my-0 py-1 pl-3 purple-border" 
                         id="search-box" 
                         aria-describedby="emailHelp"
                         placeholder="Suche.."/>
@@ -35,14 +35,12 @@ const VerbList = () => {
                 </div>
             </div>
              
-            <div class="col-lg-12">
-                <table class="table table-verbs">
+            <div className="col-lg-12">
+                <table className="table table-verbs">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Verb</th>
-                            <th scope="col">Präposition+Kasus</th>
-                            <th scope="col">Beispielsatz</th>
                         </tr>
                     </thead>
                     <tbody>

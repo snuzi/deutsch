@@ -8,7 +8,7 @@ const Preposition = (props) => {
         } else if (parts[1] == 'Akkusativ') {
             styles = {color: '#060f91'};
         }
-        return (<span>{parts[0]} + <span style={styles}>{parts[1]}</span></span>);
+        return (<span className="item"> {parts[0]} + <span style={styles}>{parts[1]}</span></span>);
     };
 
     return (
