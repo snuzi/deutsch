@@ -21,7 +21,7 @@ const VerbList = () => {
         <div>
              <div className="row">
                 <div className="col-md-12">
-                    <h2 className="pt-3 pb-4 text-center font-bold font-up deep-purple-text">Verben und ihre Präpositionalergänzungen</h2>
+                    <h2 className="pt-3 pb-4 text-center font-bold font-up deep-purple-text title-verbe">Verben und ihre Präpositionalergänzungen</h2>
                     <div className="input-group md-form form-sm form-2 pl-0">
                         <input
                         type="input"
