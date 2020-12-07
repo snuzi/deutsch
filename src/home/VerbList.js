@@ -1,7 +1,7 @@
 import verbList from '../assets/verben.json';
 import React from "react";
-import ReactDOM from "react-dom";
 import VerbRow from '../verbs/verbRow'
+import {Helmet} from "react-helmet";
 
 const VerbList = () => {
     const [searchTerm, setSearchTerm] = React.useState("");
@@ -19,6 +19,11 @@ const VerbList = () => {
 
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Deutsch - Verben und ihre Präpositionalergänzungen </title>
+                <link rel="canonical" href="http://deutsch.nuzi.eu" />
+            </Helmet>
              <div className="row">
                 <div className="col-md-12">
                     <h4 className="pt-3 pb-4 text-center font-bold font-up deep-purple-text title-verbe">Verben und ihre Präpositionalergänzungen</h4>

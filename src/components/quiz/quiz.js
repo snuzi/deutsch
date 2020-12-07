@@ -6,25 +6,38 @@ const Quiz = () => {
 
  
     const questions = new Questions();
-    const quizQuestions = questions.getQuestions(5);
-    const [isRestart, restart] = useState(0);
+    const [count, setCount] = useState(0);
 
-
-    const getObject = (questions) => {
+    const getQuizObject = (questions) => {
         return {
-            quizTitle: "React Quiz Component Demo",
-            quizSynopsis: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim",
+            "appLocale": {
+                "landingHeaderText": "<questionLength> Übungen",
+                "question": "Übung",
+                "startQuizBtn": "Quiz starten",
+                "resultFilterAll": "Alle",
+                "resultFilterCorrect": "Richtig",
+                "resultFilterIncorrect": "Falsch",
+                "nextQuestionBtn": "Weiter",
+                "resultPageHeaderText": " Sie haben das Quiz abgeschlossen. Sie haben <correctIndexLength> von <questionLength> Fragen erhalten."
+            } ,
+            quizTitle: "Verben mit Präpositionen-Quiz",
+            // quizSynopsis: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim",
             questions: questions
         };
     }
 
-    const [stateQuiz, setQuestions] = useState(getObject(questions.getQuestions(5)));
-
+    const [stateQuiz, setQuestions] = useState(getQuizObject(questions.getQuestions(5)));
+    const resetQuiz = () => {
+        setCount(count + 1);
+        setQuestions(getQuizObject(questions.getQuestions(5)));
+    }
 
     return (
         <div>
-            <button nClick={() => setQuestions(getObject(questions.getQuestions(5)))} type="button" class="btn btn-secondary">Neu starten</button>
-            <QuizComponent quiz={stateQuiz} continueTillCorrect={true}/>
+            <button onClick={resetQuiz} type="button" class="btn btn-secondary">Neu starten</button>
+            <div key={count}>
+                <QuizComponent quiz={stateQuiz} continueTillCorrect={true}/>
+            </div>
         </div>
     )
 }
