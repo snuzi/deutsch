@@ -8,7 +8,6 @@ import Popper from 'popper.js';
 import QuizPage from './pages/quiz';
 import { Route, Switch, NavLink, BrowserRouter } from "react-router-dom";
 
-
 function App() {
   return (
     <body className="">
