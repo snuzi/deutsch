@@ -6,7 +6,22 @@ import 'bootstrap/dist/js/bootstrap.js';
 import $ from 'jquery';
 import Popper from 'popper.js';
 import QuizPage from './pages/quiz';
-import { Route, Switch, NavLink, BrowserRouter } from "react-router-dom";
+import { Route, Switch, NavLink, BrowserRouter, Router } from "react-router-dom";
+import { createBrowserHistory } from 'history';
+import ReactGA from 'react-ga';
+
+const history = createBrowserHistory();
+
+ReactGA.initialize('UA-55779882-1');
+
+ReactGA.set({ page: 'Home page' }); // Update the user's current page
+ReactGA.pageview('Home page'); // Record a pageview for the given page
+
+// Initialize google analytics page view tracking
+history.listen(location => {
+  ReactGA.set({ page: location.pathname }); // Update the user's current page
+  ReactGA.pageview(location.pathname); // Record a pageview for the given page
+});
 
 
 function App() {
@@ -14,7 +29,7 @@ function App() {
     <body className="">
         <main>
             <div className="App">
-                <BrowserRouter>
+                <Router history={history}>
                     <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
                         <a class="navbar-brand" href="#">Deutsch lernen</a>
                         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +52,7 @@ function App() {
                         <Route path="/" exact component={Home} />
                         <Route path="/quiz" component={QuizPage} />
                     </Switch>    
-                </BrowserRouter> 
+                </Router> 
             </div>
         </main>
     </body>

@@ -5,7 +5,7 @@ import {Helmet} from "react-helmet";
 const QuizPage = () => {
     
     return (
-        <div>
+        <div className="container mt-4">
              <Helmet>
                 <meta charSet="utf-8" />
                 <title>Deutsch Verben lernen - Quiz</title>
