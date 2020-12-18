@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-let rawdata = fs.readFileSync('./src/assets/dirty.json');
+let rawdata = fs.readFileSync('../src/assets/dirty.json');
 let list = JSON.parse(rawdata);
 
 const cleanList = [];
@@ -17,12 +17,15 @@ list.pageTables.forEach(page => {
             return;
         }
         cleanVerbRow.verb = verbRow[0].trim();
-        cleanVerbRow.preposition = verbRow[2].trim().split('\n');
-        cleanVerbRow.sample = verbRow[4].trim().split('\n');
+        cleanVerbRow.preposition = verbRow[2].trim().split('\n')
+            .filter(x => !!x.trim())
+            .map(x => x.replace(' +', '+'));
+        cleanVerbRow.sample = verbRow[4].trim().split('\n').filter(x => !!x.trim());
+  
         cleanList.push(cleanVerbRow);
     });
 });
 
-console.log(cleanList);
 let data = JSON.stringify(cleanList);
-fs.writeFileSync('./src/assets/clean-verbs.json', data);
+fs.writeFileSync('../src/assets/clean-verbs.json', data);
+console.log('Completed');
