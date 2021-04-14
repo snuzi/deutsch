@@ -96,4 +96,11 @@ ul.no-bullets {
   padding: 3px;
 }
 
+li.nav-item {
+    border: solid 1px #d2d2d2;
+    border-radius: 7px;
+    margin: 0 3px 0 3px;
+    padding: 2px;
+}
+
 
